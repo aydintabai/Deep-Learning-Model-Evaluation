@@ -52,12 +52,12 @@ After training, the baseline CNN, which consisted of two convolutional layers an
 
 The ResNet18 architecture was able to achieve the highest test accuracy overall at 76.57%, showing the effectiveness of residual connections for training deeper models. Changing the standard activation function of ReLU to LeakyReLU resulted in similar performance of 75.82% test accuracy, illustrating that activation choice had a slight impact. However, when ResNet18 was trained with SGD instead of Adam, the test accuracy dropped to 64.96%, despite having a similar training time. This result highlights the importance of optimizer choice when training networks.
 
-![Accuracies](Accuracies.png)
+![Accuracies](graphs/Accuracies.png)
 VGG11, however, performed significantly worse than all other models, achieving only 10.00% test accuracy with a final loss of 2.3027. This outcome suggests that the architecture failed to learn under the current training configuration, likely because the model was not well suited for the dataset or training conditions used, since VGG11 was designed for larger images or the learning rate was not tuned enough.
 
 The learning of each model can also be further understood by comparing their training loss over time. Most models showed a steady decrease in loss with the Deeper Baseline CNN and ResNet variants converging quicker than others. Differently, VGG11’s training loss remained flat with a slight decrease in the first two epochs, supporting that it failed to train.
 
-![Loss](Loss.png)
+![Loss](graphs/Loss.png)
 
 Overall, the most accurate and consistent performers were ResNet18 (ReLU), ResNet18 (LeakyReLU), and the Deeper Baseline CNN, all achieving over 75% test accuracy. The results also illustrate that while increasing model complexity can be helpful, it must also have the right optimization and training strategies to be successful.
 
