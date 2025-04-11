@@ -1,4 +1,4 @@
-# A Comparison of CNN Variations for Image Classification
+<h1 align="center">A Comparison of CNN Variations for Image Classification</h1>
 
 <p align="center">
 <b>Aydin Tabatabai</b><br>
@@ -6,7 +6,7 @@ University of California, San Diego <br>
 atabatabai@ucsd.edu
 </p>
 
-## Abstract
+<h2 align="center">Abstract</h2>
 
 Convolutional neural networks are widely used for image classification tasks, but their performance can depend heavily on architectural choices and training strategies. This project investigates how design choices in network architecture, activation functions, optimizers, etc. affect performance of classification on a comprehensive dataset. Seven variations of models were implemented and trained from scratch, including a baseline CNN, variants of the baseline, multiple ResNet18 variants, and VGG11. All of the models were trained and evaluated over ten epochs, measuring test accuracy, training time, and final training loss. The model that was able to achieve the highest accuracy was ResNet18 with the Adam optimizer with a test accuracy at 76.57%. The next most accurate models were a LeakyReLU variant of ResNet18 and then a deeper baseline CNN. However, in contrast, VGG11 performed very poorly, possibly due to an architectural mismatch or insufficient tuning. The results demonstrate that deeper architectures and adaptive optimizers offer meaningful improvements when configured appropriately. These findings highlight the importance of selecting model components and training setups carefully when designing learning systems for image classification.
 
@@ -74,7 +74,9 @@ Overall, the study demonstrated that architectural decisions, such as model dept
 ## References 
 \[1\] Krizhevsky, A. (2009). *Learning multiple layers of features from tiny images* (Technical  
 Report). University of Toronto.  
+
 \[2\] He, K., Zhang, X., Ren, S., & Sun, J. (2015). Deep residual learning for image recognition.  
 arXiv. https://arxiv.org/abs/1512.03385  
+
 \[3\] Simonyan, K., & Zisserman, A. (2014). Very deep convolutional networks for Large-Scale  
 image recognition. *Computer Vision and Pattern Recognition*. http://export.arxiv.org/pdf/1409.1556
