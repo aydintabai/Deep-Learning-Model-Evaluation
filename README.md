@@ -1,5 +1,8 @@
 # A Comparison of CNN Variations for Image Classification
 
+<p align="center">
+Aydin Tabatabai
+</p>
 Aydin Tabatabai<br>
 University of California, San Diego  
 atabatabai@ucsd.edu
