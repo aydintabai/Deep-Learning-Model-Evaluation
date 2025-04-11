@@ -1,8 +1,8 @@
 # A Comparison of CNN Variations for Image Classification
 
 <p align="center">
-**Aydin Tabatabai**
-University of California, San Diego  
+<b>Aydin Tabatabai</b><br>
+University of California, San Diego <br> 
 atabatabai@ucsd.edu
 </p>
 
@@ -31,10 +31,10 @@ All of the models were trained and evaluated on the CIFAR-10 dataset, which cont
 ### Training Procedure
 Each model was trained for 10 epochs using the framework PyTorch. A batch size of 64 was used for both training and testing. Most models were trained using the Adam optimizer with a learning rate of 0.001. For comparison, one variant of ResNet18 was trained using SGD with a learning rate of 0.001 and momentum of 0.9. All models used cross-entropy loss as the objective function. All training was conducted on a T4 GPU.
 
-**Evaluation Metrics**  
+### Evaluation Metrics
 Model performance was measured using three primary metrics, test accuracy, training time, and final training loss. Test accuracy measured the percentage of correct predictions on the CIFAR-10 test set. Training time was recorded in seconds for each model over 10 epochs to assess computational cost. Final training loss reflected the cross-entropy loss value at the end of the last epoch, giving insight into convergence behavior. These metrics allowed for a thorough and comprehensive comparison of the different models across multiple aspects.
 
-**Experiment**
+## Experiment
 
 To evaluate the effect of architectural and training variations on image classification performance, the seven CNN models were evaluated using test accuracy, training time, and final training loss. The model experiments included a baseline CNN, a regularized CNN with batch normalization and dropout, a deeper CNN with four convolutional layers, several variants of ResNet18, and VGG11. All models were trained from scratch for 10 epochs using the same evaluation metrics.
 
@@ -52,16 +52,16 @@ After training, the baseline CNN, which consisted of two convolutional layers an
 
 The ResNet18 architecture was able to achieve the highest test accuracy overall at 76.57%, showing the effectiveness of residual connections for training deeper models. Changing the standard activation function of ReLU to LeakyReLU resulted in similar performance of 75.82% test accuracy, illustrating that activation choice had a slight impact. However, when ResNet18 was trained with SGD instead of Adam, the test accuracy dropped to 64.96%, despite having a similar training time. This result highlights the importance of optimizer choice when training networks.
 
-![][image1]  
+![Accuracies](Accuracies.png)
 VGG11, however, performed significantly worse than all other models, achieving only 10.00% test accuracy with a final loss of 2.3027. This outcome suggests that the architecture failed to learn under the current training configuration, likely because the model was not well suited for the dataset or training conditions used, since VGG11 was designed for larger images or the learning rate was not tuned enough.
 
 The learning of each model can also be further understood by comparing their training loss over time. Most models showed a steady decrease in loss with the Deeper Baseline CNN and ResNet variants converging quicker than others. Differently, VGG11’s training loss remained flat with a slight decrease in the first two epochs, supporting that it failed to train.
 
-![][image2]
+![Loss](Loss.png)
 
 Overall, the most accurate and consistent performers were ResNet18 (ReLU), ResNet18 (LeakyReLU), and the Deeper Baseline CNN, all achieving over 75% test accuracy. The results also illustrate that while increasing model complexity can be helpful, it must also have the right optimization and training strategies to be successful.
 
-**Conclusion**
+## Conclusion
 
 This project explored the effects of architectural choices, activation functions, and optimization strategies on the performance of convolutional neural networks trained on the CIFAR-10 image classification dataset. A total of seven models were implemented and compared, ranging from a simple baseline CNN to more complex architectures such as ResNet18 and VGG11. Each model was trained under the same conditions and evaluated using test accuracy, training time, and final training loss.
 
@@ -71,7 +71,7 @@ The baseline model performed relatively well with a test accuracy of 72.11%. How
 
 Overall, the study demonstrated that architectural decisions, such as model depth, optimization strategies, etc., play a critical role in training effectiveness and generalization. While in situations more complex models can lead to better results, they must be implemented with the right training settings for its use case. These results help show how to build and improve CNNs for image classification problems.
 
-**References**  
+## References 
 \[1\] Krizhevsky, A. (2009). *Learning multiple layers of features from tiny images* (Technical  
 Report). University of Toronto.  
 \[2\] He, K., Zhang, X., Ren, S., & Sun, J. (2015). Deep residual learning for image recognition.  
