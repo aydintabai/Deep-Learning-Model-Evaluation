@@ -1,6 +1,7 @@
 # A Comparison of CNN Variations for Image Classification
 
 Aydin Tabatabai
+
 University of California, San Diego  
 atabatabai@ucsd.edu
 
@@ -8,7 +9,7 @@ atabatabai@ucsd.edu
 
 Convolutional neural networks are widely used for image classification tasks, but their performance can depend heavily on architectural choices and training strategies. This project investigates how design choices in network architecture, activation functions, optimizers, etc. affect performance of classification on a comprehensive dataset. Seven variations of models were implemented and trained from scratch, including a baseline CNN, variants of the baseline, multiple ResNet18 variants, and VGG11. All of the models were trained and evaluated over ten epochs, measuring test accuracy, training time, and final training loss. The model that was able to achieve the highest accuracy was ResNet18 with the Adam optimizer with a test accuracy at 76.57%. The next most accurate models were a LeakyReLU variant of ResNet18 and then a deeper baseline CNN. However, in contrast, VGG11 performed very poorly, possibly due to an architectural mismatch or insufficient tuning. The results demonstrate that deeper architectures and adaptive optimizers offer meaningful improvements when configured appropriately. These findings highlight the importance of selecting model components and training setups carefully when designing learning systems for image classification.
 
-**Introduction**
+## Introduction
 
 Convolutional neural networks (CNNs) are widely used for solving image classification tasks because of their ability to learn visual patterns directly from raw image data. The utility and adaptability of these networks, however, are not only determined by the presence of convolutional layers. Factors like model layer depth, choice of activation function, use of regularization techniques, choice of optimization algorithm, etc. can all influence how effectively a network learns and generalizes to new data.
 
@@ -16,17 +17,17 @@ This report looks at how those choices impact performance of a model when traini
 
 The purpose of this study is to highlight the trade offs between these depth, regularization, optimization, etc. strategies and choices in neural network design. By doing so, insight can be gained into which factors most significantly contribute to effective learning and generalization in image classification. The results will help to show the strengths of each approach and offer useful takeaways for building effective models in similar real-world situations.
 
-**Method**
+## Method
 
-**Architectures**  
+### Architectures  
 Seven CNN models were designed to evaluate the effects of architectural choices, activation functions, and optimization strategies on classification performance. The baseline model consisted of a basic CNN with two convolutional layers followed by two fully connected layers. To measure the impact of depth, a deeper CNN variant was created with four convolutional layers. Then, another variation of the baseline network was created that incorporated batch normalization and dropout to determine the effect of regularization.
 
 In addition to these models that were custom built, predefined architectures were also explored. ResNet18 was one architecture selected, testing it with three different variations. First, the original ResNet18 using the ReLU activation function and Adam optimizer was trained. Then, a second version using stochastic gradient descent (SGD) instead of Adam was done. Finally, a third was trained with LeakyReLU activation instead of ReLU. Additionally, a VGG11 model was also included to assess performance of a different architecture. All of the models concluded with a fully connected layer producing ten output classes, which corresponds to the CIFAR-10 dataset.
 
-**Dataset**  
+### Dataset
 All of the models were trained and evaluated on the CIFAR-10 dataset, which contains 60,000 color images across ten categories, with 50,000 images used for training and 10,000 for testing. The ten classes are airplanes, cars, birds, cats, deer, dogs, frogs, horses, ships, and trucks. Before training, each image was converted to a tensor and normalized using a mean and standard deviation of (0.5, 0.5, 0.5) for each color channel.
 
-**Training Procedure**  
+### Training Procedure
 Each model was trained for 10 epochs using the framework PyTorch. A batch size of 64 was used for both training and testing. Most models were trained using the Adam optimizer with a learning rate of 0.001. For comparison, one variant of ResNet18 was trained using SGD with a learning rate of 0.001 and momentum of 0.9. All models used cross-entropy loss as the objective function. All training was conducted on a T4 GPU.
 
 **Evaluation Metrics**  
