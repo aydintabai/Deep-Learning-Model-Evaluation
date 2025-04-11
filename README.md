@@ -4,6 +4,12 @@
 University of California, San Diego  
 atabatabai@ucsd.edu
 
+<center>
+<strong>Aydin Tabatabai</strong><br>
+University of California, San Diego<br>
+atabatabai@ucsd.edu
+</center>
+
 **Abstract**
 
 Convolutional neural networks are widely used for image classification tasks, but their performance can depend heavily on architectural choices and training strategies. This project investigates how design choices in network architecture, activation functions, optimizers, etc. affect performance of classification on a comprehensive dataset. Seven variations of models were implemented and trained from scratch, including a baseline CNN, variants of the baseline, multiple ResNet18 variants, and VGG11. All of the models were trained and evaluated over ten epochs, measuring test accuracy, training time, and final training loss. The model that was able to achieve the highest accuracy was ResNet18 with the Adam optimizer with a test accuracy at 76.57%. The next most accurate models were a LeakyReLU variant of ResNet18 and then a deeper baseline CNN. However, in contrast, VGG11 performed very poorly, possibly due to an architectural mismatch or insufficient tuning. The results demonstrate that deeper architectures and adaptive optimizers offer meaningful improvements when configured appropriately. These findings highlight the importance of selecting model components and training setups carefully when designing learning systems for image classification.
